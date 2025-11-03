@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Proteína Whey Ultra",
+        "description": "Aislado de suero de rápida absorción. Sabor Vainilla, 2kg.",
+        "imgUrl": "https://http2.mlstatic.com/D_NQ_NP_813306-MLU74529085392_022024-O.webp",
+        "price": 85.99,
+        "category_id": 1
+    },
+    {
+        "id": 2,
+        "title": "BCAA Aminoácidos",
+        "description": "Fórmula avanzada para recuperación muscular y energía sostenida.",
+        "imgUrl": "https://glossecuador.com/wp-content/uploads/2024/05/1-sf-bcaa-watermelon-350-g.jpg",
+        "price": 45.50,
+        "category_id": 1
+    },
+    {
+        "id": 3,
+        "title": "Cinta de Correr ProFit",
+        "description": "Diseño plegable, ideal para el hogar. Monitor cardíaco incluido.",
+        "imgUrl": "https://profitla.myshopify.com/cdn/shop/products/caminadora-electrica-titania-2-0-hp-profit-28440707694710.jpg?v=1628004900",
+        "price": 999.00,
+        "category_id": 3
+    },
+    {
+        "id": 4,
+        "title": "Guantes de Levantamiento",
+        "description": "Máximo agarre y protección, ajustables y transpirables.",
+        "imgUrl": "https://m.media-amazon.com/images/I/91zKS77g46L._AC_SL1500_.jpg",
+        "price": 22.95,
+        "category_id": 3
+    },
+    {
+        "id": 5,
+        "title": "Quemador de Grasa FX",
+        "description": "Fórmula termogénica potente, 60 cápsulas.",
+        "imgUrl": "https://m.media-amazon.com/images/I/51RItgVywaL._AC_UF1000,1000_QL80_.jpg",
+        "price": 35.00,
+        "category_id": 2
+    }
+]
