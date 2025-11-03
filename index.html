@@ -52,7 +52,7 @@
               completamente gratis</strong>.</p>
           <div class="hero-cta">
             <a href="#productos" class="btn btn-primary">Prueba Gratis Ahora</a>
-            <a href="#planes" class="btn btn-outline">Ver Planes</a>
+            <a href="#Rutina" id="btn-video" class="btn btn-outline">Ver Rutina</a>
           </div>
           <ul class="hero-features">
             <li>Acceso 24/7</li>
@@ -122,26 +122,76 @@
       </div>
     </section>
 
-    <section id="productos" class="section section--alt">
+
+
+
+    <section class="section" id="productos">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="section-head">
-          <h2 class="section-title">Productos Destacados</h2>
-          <p class="section-subtitle">Selecciona categoría para filtrar productos.</p>
-        </div>
-
-        <div class="product-controls ribbon" id="ribbon" role="tablist" aria-label="Categorías de productos">
-          <div class="ribbon-inner">
-            <button class="chip active" data-filter="all" role="tab" aria-selected="true">Todos</button>
-            <button class="chip" data-filter="equipamiento" role="tab">Equipamiento</button>
-            <button class="chip" data-filter="suplementos" role="tab">Suplementos</button>
-            <button class="chip" data-filter="ropa" role="tab">Ropa</button>
-            <button class="chip" data-filter="accesorios" role="tab">Accesorios</button>
-            <button class="chip" data-filter="ofertas" role="tab">Ofertas</button>
-          </div>
-        </div>
-
-
+        <h2 class="section-title">Productos más vendidos</h2>
+        <p class="section-subtitle">Encuentra los suplementos y equipos más populares.</p>
       </div>
+
+      <div class="max-w-6xl mx-auto px-4 mt-6" id="container-06">
+        <form class="max-w-sm mx-0"> <select id="categories"
+            class="bg-transparent border-none text-white text-sm rounded-lg focus:ring-var(--primary) focus:border-var(--primary) block w-full p-2.5 chip">
+            <option selected>Seleccione una categoría</option>
+            <option value="1">Category01</option>
+            <option value="2">Category02</option>
+            <option value="3">Category03</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 mt-6" id="container-07">
+        <div id="products-container" class="products-grid">
+
+          <div class="product-card animate-pulse"
+            style="background: var(--panel); border: 1px solid rgba(255,255,255,0.06);">
+            <div class="product-media"
+              style="height: 160px; display: flex; align-items: center; justify-content: center;">
+              <div class="w-full h-full bg-gray-700 rounded-t-lg" style="background: rgba(255,255,255,0.04);"></div>
+            </div>
+            <div class="product-body space-y-3">
+              <div class="h-6 bg-gray-700 rounded w-3/4" style="background: rgba(255,255,255,0.06);"></div>
+              <div class="h-5 bg-gray-700 rounded w-1/2" style="background: rgba(255,255,255,0.04);"></div>
+              <div class="h-10 bg-gray-700 rounded w-full"
+                style="background: var(--primary); opacity: 0.5; border-radius: 10px;"></div>
+            </div>
+          </div>
+
+          <div class="product-card animate-pulse"
+            style="background: var(--panel); border: 1px solid rgba(255,255,255,0.06);">
+            <div class="product-media"
+              style="height: 160px; display: flex; align-items: center; justify-content: center;">
+              <div class="w-full h-full bg-gray-700 rounded-t-lg" style="background: rgba(255,255,255,0.04);"></div>
+            </div>
+            <div class="product-body space-y-3">
+              <div class="h-6 bg-gray-700 rounded w-3/4" style="background: rgba(255,255,255,0.06);"></div>
+              <div class="h-5 bg-gray-700 rounded w-1/2" style="background: rgba(255,255,255,0.04);"></div>
+              <div class="h-10 bg-gray-700 rounded w-full"
+                style="background: var(--primary); opacity: 0.5; border-radius: 10px;"></div>
+            </div>
+          </div>
+
+          <div class="product-card animate-pulse"
+            style="background: var(--panel); border: 1px solid rgba(255,255,255,0.06);">
+            <div class="product-media"
+              style="height: 160px; display: flex; align-items: center; justify-content: center;">
+              <div class="w-full h-full bg-gray-700 rounded-t-lg" style="background: rgba(255,255,255,0.04);"></div>
+            </div>
+            <div class="product-body space-y-3">
+              <div class="h-6 bg-gray-700 rounded w-3/4" style="background: rgba(255,255,255,0.06);"></div>
+              <div class="h-5 bg-gray-700 rounded w-1/2" style="background: rgba(255,255,255,0.04);"></div>
+              <div class="h-10 bg-gray-700 rounded w-full"
+                style="background: var(--primary); opacity: 0.5; border-radius: 10px;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
     </section>
 
     <section id="testimonios" class="section">
@@ -169,43 +219,47 @@
     </section>
 
 
-   <section class="bg-black text-white py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            
-            <div class="max-w-md mx-0"> 
-                <h2 class="text-4xl font-bold mb-2">Contacto</h2>
-                <p class="text-gray-400 mb-8">Escríbenos y te responderemos pronto</p>
+    <section class="bg-black text-white py-16">
+      <div class="max-w-6xl mx-auto px-4">
 
-                <form class="space-y-6">
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="flex-1 space-y-1">
-                            <label for="nombre" class="block text-base font-medium">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Tu nombre"
-                                class="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500" />
-                        </div>
+        <div class="max-w-md mx-0">
+          <h2 class="text-4xl font-bold mb-2">Contacto</h2>
+          <p class="text-gray-400 mb-8">Escríbenos y te responderemos pronto</p>
 
-                        <div class="flex-1 space-y-1">
-                            <label for="email" class="block text-base font-medium">Email</label>
-                            <input type="email" id="email" placeholder="tu@correo.com"
-                                class="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500" />
-                        </div>
-                    </div>
+          <form class="space-y-6">
+            <div class="flex flex-col md:flex-row gap-4">
+              <div class="flex-1 space-y-1">
+                <label for="nombre" class="block text-base font-medium">Nombre</label>
+                <input type="text" id="nombre" placeholder="Tu nombre"
+                  class="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500" />
+              </div>
 
-                    <div class="space-y-1">
-                        <label for="mensaje" class="block text-base font-medium">Mensaje</label>
-                        <textarea id="mensaje" rows="4" placeholder="Hola, quiero más información..."
-                            class="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-xl text-white placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full py-3 px-6 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition duration-200">
-                        Enviar mensaje
-                    </button>
-                </form>
+              <div class="flex-1 space-y-1">
+                <label for="email" class="block text-base font-medium">Email</label>
+                <input type="email" id="email" placeholder="tu@correo.com"
+                  class="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500" />
+              </div>
             </div>
+
+            <div class="space-y-1">
+              <label for="mensaje" class="block text-base font-medium">Mensaje</label>
+              <textarea id="mensaje" rows="4" placeholder="Hola, quiero más información..."
+                class="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-xl text-white placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3 px-6 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition duration-200">
+              Enviar mensaje
+            </button>
+          </form>
         </div>
+      </div>
     </section>
+
+
   </main>
+
+
 
   <footer class="site-footer">
     <div class="max-w-7xl mx-auto px-4 footer-inner">
@@ -217,6 +271,9 @@
     </div>
   </footer>
 
+
+
+  <script type="module" src="src/js/file01.js"></script>
 
 </body>
 
