@@ -45,6 +45,27 @@ let saveContact = (nombre,email,mensaje) => {
 
 }
 
+let getContact = async () => {
 
-export{saveContact}
+    try{
+    const contactRef = ref(dataBase, "Contact");
+    const snap = await get(contactRef);
+
+    if(snap.exists()){
+        return {
+            status: true,
+            data: snap.val()
+        };
+    }
+}
+catch (error) {
+    return {
+        status: false,
+        message: "Error al obtener el contacto"
+    };
+}
+}
+
+
+export{saveContact, getContact}
 
