@@ -1,6 +1,7 @@
 'use strict';
 
 import { fetchProducts, fetchCategories } from "./functions";
+import { saveContact } from "./firebase";
 
 let linkproducts = "https://jaesparz.github.io/my_gymProducts_json/products.json";
 let linkcategories = "https://jaesparz.github.io/my_gymProducts_json/categories.xml";
@@ -63,7 +64,7 @@ let renderProducts = async() => {
             };
 
         };
-};
+}
 
 
 let renderCategories = async () => {
@@ -105,11 +106,37 @@ let renderCategories = async () => {
     }
 }
 
+let enableFormContact = () => {
+
+    const form = document.getElementById("getContacto");
+
+    if(form){
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let nombre = document.getElementById("nombre").value;
+            let email = document.getElementById("email").value;
+            let mensaje = document.getElementById("mensaje").value;
+
+
+            saveContact(nombre,email,mensaje).then(response => {
+                if(response.status){
+                    alert("Contacto Enviado! Te contactaremos Rápido :D");
+                }
+                else {
+                    alert("No se pudo enviar el contacto");
+                }
+            });
+        });
+    }
+
+}
+
 
 (() => {
     alert("Bienvenido a la Landing Page de Alpha Gym");
    
-    }) ();
+    })();
 
 
 
@@ -128,6 +155,7 @@ let mostrarCbum = () => {
     mostrarCbum();
     renderProducts();
     renderCategories();
+   enableFormContact();
 
     }) ();
 
