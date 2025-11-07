@@ -230,7 +230,7 @@ body {
 .class-card,
 .testimonial {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.2));
-  padding: 18px;
+  padding: 6px;
   border-radius: var(--radius);
   box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6)
 }
