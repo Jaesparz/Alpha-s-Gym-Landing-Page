@@ -2,7 +2,7 @@
 
 import { fetchProducts } from "./functions";
 
-let linkproducts = "./products.json";
+let linkproducts = "https://jaesparz.github.io/my_gymProducts_json/products.json";
 
 let renderProducts = () => {
 
