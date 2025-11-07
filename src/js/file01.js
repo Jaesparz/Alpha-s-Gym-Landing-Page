@@ -1,14 +1,16 @@
 'use strict';
 
-import { fetchProducts } from "./functions";
+import { fetchProducts, fetchCategories } from "./functions";
 
 let linkproducts = "https://jaesparz.github.io/my_gymProducts_json/products.json";
+let linkcategories = "https://jaesparz.github.io/my_gymProducts_json/categories.xml";
 
-let renderProducts = () => {
+let renderProducts = async() => {
 
+    try{
 
-    fetchProducts(linkproducts)
-        .then(result => {
+    let result = await fetchProducts(linkproducts);
+      
             if (result.success == true) {
 
                 let container = document.getElementById("products-container");
@@ -17,8 +19,6 @@ let renderProducts = () => {
                 let products = result.body.slice(0, 6);
 
                 products.forEach(product => {
-
-
 
 
                     let productHTML = `
@@ -34,7 +34,7 @@ let renderProducts = () => {
        <div class="h-5 rounded w-full">[PRODUCT.TITLE]</div>
            <div class="space-y-2">
                <a href="[PRODUCT.PRODUCTURL]" target="_blank" rel="noopener noreferrer"
-               class="text-white bg-red-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full inline-block">
+               class="text-white bg-red-700 hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full inline-block">
                    Ver en Amazon
                </a>
                <div class="hidden"><span class="1">[PRODUCT.CATEGORY_ID]</span></div>
@@ -51,23 +51,59 @@ let renderProducts = () => {
                     productHTML = productHTML.replaceAll('[PRODUCT.IMGURL]', product.imgUrl);
 
 
-
                     container.innerHTML += productHTML;
 
                 });
-
             }
-            throw new Error(result.success);
-
-        })
-        .catch(error => {
+        }
+        catch(error) {
             return {
                 success: false,
                 body: error.message
             };
 
-        });
+        };
 };
+
+
+let renderCategories = async () => {
+
+    try{
+
+    let response = await fetchCategories(linkcategories);
+
+    if(response.success == true){
+       
+        let container = document.getElementById("categories");
+
+        container.innerHTML = "<option selected disabled class= bg-black > Seleccione una categoría </option>";
+
+        let categoriesXML = response.body;
+
+        let categories = categoriesXML.getElementsByTagName("category");
+
+        for (let category of categories){ 
+
+            let id = category.getElementsByTagName("id")[0].textContent;
+            let name = category.getElementsByTagName("name")[0].textContent;
+
+            let XMLplan = ` <option value="[ID]" class= bg-black> [NAME] </option>`;
+
+             XMLplan = XMLplan.replaceAll("[ID]",id);
+             XMLplan = XMLplan.replaceAll("[NAME]",name);
+
+            container.innerHTML += XMLplan;
+        }
+        
+        
+    }
+    }
+    catch (error) {
+        console.log("NO VALE");
+
+        
+    }
+}
 
 
 (() => {
@@ -91,6 +127,7 @@ let mostrarCbum = () => {
 
     mostrarCbum();
     renderProducts();
+    renderCategories();
 
     }) ();
 
