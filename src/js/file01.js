@@ -177,6 +177,20 @@ let mostrarCbum = () => {
     }
 }
 
+let menuResponsivo= () => {
+const toggleButton = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+
+toggleButton.addEventListener('click', () => {
+ 
+  mobileMenu.classList.toggle('hidden');
+  const isHidden = mobileMenu.classList.contains('hidden');
+  toggleButton.setAttribute('aria-label', isHidden ? 'Abrir menú' : 'Cerrar menú');
+});
+
+}
+
 
 (() => {
 
@@ -185,6 +199,7 @@ let mostrarCbum = () => {
     renderCategories();
     enableFormContact();
     DisplayNumberContacts();
+    menuResponsivo();
 
 })();
 
