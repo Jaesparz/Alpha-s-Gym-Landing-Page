@@ -145,7 +145,7 @@ let DisplayNumberContacts = async () => {
 
 
    let contadorHTML = `
-    <p class="text-white text-right font-bold lg:text-sm whitespace-nowrap"> 
+    <p class="text-white font-bold text-center lg:text-left lg:text-sm"> 
 [CONTADOR] personas ya han enviado su contacto, aprovecha esta promoción 
         de 2 días gratis!!!! :DD 
     </p>
